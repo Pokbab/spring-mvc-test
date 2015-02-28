@@ -8,6 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>회원가입</title>
 	<link href="/resources/css/join.css" rel="stylesheet">
+	<script type="text/javascript" src="/resources/js/jquery-2.1.3.js"></script>
 </head>
 <body>
 <form action="/join">

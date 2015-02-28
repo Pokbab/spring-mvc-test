@@ -21,8 +21,10 @@
 		<!--defaultQueryTiemout 을 설정한다. 초단위 -->
 		<setting name="defaultStatementTimeout" value="30" />
 		
-		
-		
 	</settings>
 	
+	<typeAliases>
+		<typeAlias alias="member" type="com.maple.test.model.Member"/>
+		<typeAlias alias="board" type="com.maple.board.model.Board"/>
+	</typeAliases>
 </configuration>
