@@ -28,11 +28,8 @@ public class BoardController {
 	private BoardService boardService;
 
 	@RequestMapping("/board/list")
-	public String getList(Model model) {
+	public String getList() {
 		
-		List<Board> boardList = boardService.getList();
-		
-		model.addAttribute("boardList", boardList);
 		return "/board/list";
 	}
 	

@@ -9,6 +9,7 @@ package com.maple.board.service;
 
 import java.util.List;
 
+import com.maple.board.model.BaseResponse;
 import com.maple.board.model.Board;
 
 /**
@@ -29,7 +30,8 @@ public interface BoardService {
 
 	/**
 	 * @param board
+	 * @return 
 	 */
-	void saveBoard(Board board);
+	BaseResponse saveBoard(Board board);
 
 }

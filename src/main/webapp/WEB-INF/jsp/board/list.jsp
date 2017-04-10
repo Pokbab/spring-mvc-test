@@ -10,8 +10,10 @@
 	<title>게시판</title>
 	<link href="/resources/css/board.css" rel="stylesheet">
 	<script type="text/javascript" src="/resources/js/jquery-2.1.3.js"></script>
+	<script type="text/javascript" src="/resources/js/angular.min.js"></script>
+	<script type="text/javascript" src="/resources/js/list.js"></script>
 </head>
-<body>
+<body ng-app="boardApp" ng-controller="boardCtrl" ng-init="init()">
 	<h3>게시판</h3>
 	
 	<table>
@@ -20,21 +22,15 @@
 			<td>제목</td>
 			<td>작성자</td>
 		</tr>
-		<c:forEach items="${boardList}" var="board">
-		<tr>
-			<td>${board.id}</td>
-			<td><a href="/board/detail/${board.id}">${board.title}</a></td>
-			<td>${board.author}</td>
+		<tr ng-repeat="board in boardList">
+			<td>{{board.id}}</td>
+			<td><a href="/board/detail/{{board.id}}">{{board.title}}</a></td>
+			<td>{{board.author}}</td>
+			<td><a href="javascript:;" ng-click="remove(board.id)">삭제</a></td>
 		</tr>
-		</c:forEach>
 	</table>
 	
-	<button type="button" id="btnWriteForm">글쓰기</button>
+	<button type="button" id="btnWriteForm" ng-click="goWrite()">글쓰기</button>
 	
-	<script type="text/javascript">
-		$('#btnWriteForm').click(function() {
-			location.href = '/board/write/form';
-		});
-	</script>
 </body>
 </html>

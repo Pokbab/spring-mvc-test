@@ -13,7 +13,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.maple.board.mapper.BoardMapper;
+import com.maple.board.model.BaseResponse;
 import com.maple.board.model.Board;
+import com.maple.board.model.StandardResponseHeader;
 
 /**
  * @author Kanghoon Choi
@@ -35,11 +37,10 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public void saveBoard(Board board) {
-		//TODO 작성자를 넣는 로직을 추가해야함
+	public BaseResponse saveBoard(Board board) {
 		board.setAuthor("최강훈");
-		
 		boardMapper.insertBoard(board);
+		return new BaseResponse(new StandardResponseHeader());
 	}
 
 }
